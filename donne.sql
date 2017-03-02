@@ -26,6 +26,15 @@ INSERT INTO `niveau` (`idNiveau`, `nomNiveau`) VALUES
 (2, 'moyen'),
 (3, 'difficile');
 
+INSERT INTO `score` (`idScore`, `genre`, `level`, `nomJoueur`, `point`) VALUES
+(1, 'Jeu Video', 'moyen', 'Asakura', 18),
+(2, 'Sport', 'moyen', 'Hershel Lay', 9),
+(3, 'Jeu Video', 'moyen', 'azertyuiop', 30),
+(4, 'Jeu Video', 'difficile', 'azertyuiop', -2),
+(5, 'Manga', 'difficile', 'Asakura', 9),
+(6, 'Jeu Video', 'moyen', 'amidamaru', 29),
+(7, 'Culture gén', 'difficile', 'amidamaru', 30);
+
 
 INSERT INTO `question` (`idQuestion`, `question`, `vraiReponse`, `fauxReponse1`, `fauxReponse2`, `idNiveau`, `idCategorie`) VALUES
 (1, 'Quel ouvrage religieux fut écrit d après le récit des songes d un prophète ?', 'Le Coran', 'La Bible', 'La Torah', 1, 1),

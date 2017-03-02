@@ -116,14 +116,7 @@ CREATE TABLE IF NOT EXISTS `score` (
 -- Contenu de la table `score`
 --
 
-INSERT INTO `score` (`idScore`, `genre`, `level`, `nomJoueur`, `point`) VALUES
-(1, 'Jeu Video', 'moyen', 'Asakura', 18),
-(2, 'Sport', 'moyen', 'Hershel Lay', 9),
-(3, 'Jeu Video', 'moyen', 'azertyuiop', 30),
-(4, 'Jeu Video', 'difficile', 'azertyuiop', -2),
-(5, 'Manga', 'difficile', 'Asakura', 9),
-(6, 'Jeu Video', 'moyen', 'amidamaru', 29),
-(7, 'Culture gén', 'difficile', 'amidamaru', 30);
+
 --
 -- Base de données: `information_schema`
 --
