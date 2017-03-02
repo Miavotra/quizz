@@ -1,50 +1,16 @@
--- phpMyAdmin SQL Dump
--- version 3.5.8
--- http://www.phpmyadmin.net
---
--- Client: localhost
--- Généré le: Ven 19 Février 2016 à 06:54
--- Version du serveur: 5.5.32
--- Version de PHP: 5.4.17
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
---
--- Base de données: `1101922`
---
-CREATE DATABASE `1101922` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `1101922`;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `categories`
---
+CREATE DATABASE `quiz` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `quiz`;
 
 CREATE TABLE IF NOT EXISTS `categories` (
   `idCategorie` int(11) NOT NULL,
   `typeCategorie` varchar(20) NOT NULL,
   PRIMARY KEY (`idCategorie`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Contenu de la table `categories`
---
-
-
-
--- --------------------------------------------------------
-
---
--- Structure de la table `client`
---
 
 CREATE TABLE IF NOT EXISTS `client` (
   `codeClient` int(11) NOT NULL AUTO_INCREMENT,
@@ -54,14 +20,6 @@ CREATE TABLE IF NOT EXISTS `client` (
   PRIMARY KEY (`codeClient`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=41 ;
 
---
--- Contenu de la table `client`
---
----------------------
-
---
--- Structure de la table `niveau`
---
 
 CREATE TABLE IF NOT EXISTS `niveau` (
   `idNiveau` int(11) NOT NULL,
@@ -69,16 +27,6 @@ CREATE TABLE IF NOT EXISTS `niveau` (
   PRIMARY KEY (`idNiveau`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Contenu de la table `niveau`
---
-
-
--- --------------------------------------------------------
-
---
--- Structure de la table `question`
---
 
 CREATE TABLE IF NOT EXISTS `question` (
   `idQuestion` int(11) NOT NULL AUTO_INCREMENT,
@@ -91,16 +39,6 @@ CREATE TABLE IF NOT EXISTS `question` (
   PRIMARY KEY (`idQuestion`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=49 ;
 
---
--- Contenu de la table `question`
---
-
-
--- --------------------------------------------------------
-
---
--- Structure de la table `score`
---
 
 CREATE TABLE IF NOT EXISTS `score` (
   `idScore` int(11) NOT NULL AUTO_INCREMENT,
@@ -112,22 +50,9 @@ CREATE TABLE IF NOT EXISTS `score` (
   KEY `idJoueur` (`nomJoueur`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
---
--- Contenu de la table `score`
---
-
-
---
--- Base de données: `information_schema`
---
 CREATE DATABASE `information_schema` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `information_schema`;
 
--- --------------------------------------------------------
-
---
--- Structure de la table `CHARACTER_SETS`
---
 
 CREATE TEMPORARY TABLE `CHARACTER_SETS` (
   `CHARACTER_SET_NAME` varchar(32) NOT NULL DEFAULT '',
@@ -136,9 +61,6 @@ CREATE TEMPORARY TABLE `CHARACTER_SETS` (
   `MAXLEN` bigint(3) NOT NULL DEFAULT '0'
 ) ENGINE=MEMORY DEFAULT CHARSET=utf8;
 
---
--- Contenu de la table `CHARACTER_SETS`
---
 
 INSERT INTO `CHARACTER_SETS` (`CHARACTER_SET_NAME`, `DEFAULT_COLLATE_NAME`, `DESCRIPTION`, `MAXLEN`) VALUES
 ('big5', 'big5_chinese_ci', 'Big5 Traditional Chinese', 2),
@@ -181,11 +103,6 @@ INSERT INTO `CHARACTER_SETS` (`CHARACTER_SET_NAME`, `DEFAULT_COLLATE_NAME`, `DES
 ('cp932', 'cp932_japanese_ci', 'SJIS for Windows Japanese', 2),
 ('eucjpms', 'eucjpms_japanese_ci', 'UJIS for Windows Japanese', 3);
 
--- --------------------------------------------------------
-
---
--- Structure de la table `COLLATIONS`
---
 
 CREATE TEMPORARY TABLE `COLLATIONS` (
   `COLLATION_NAME` varchar(32) NOT NULL DEFAULT '',
@@ -195,10 +112,6 @@ CREATE TEMPORARY TABLE `COLLATIONS` (
   `IS_COMPILED` varchar(3) NOT NULL DEFAULT '',
   `SORTLEN` bigint(3) NOT NULL DEFAULT '0'
 ) ENGINE=MEMORY DEFAULT CHARSET=utf8;
-
---
--- Contenu de la table `COLLATIONS`
---
 
 INSERT INTO `COLLATIONS` (`COLLATION_NAME`, `CHARACTER_SET_NAME`, `ID`, `IS_DEFAULT`, `IS_COMPILED`, `SORTLEN`) VALUES
 ('big5_chinese_ci', 'big5', 1, 'Yes', 'Yes', 1),
@@ -399,20 +312,11 @@ INSERT INTO `COLLATIONS` (`COLLATION_NAME`, `CHARACTER_SET_NAME`, `ID`, `IS_DEFA
 ('eucjpms_japanese_ci', 'eucjpms', 97, 'Yes', 'Yes', 1),
 ('eucjpms_bin', 'eucjpms', 98, '', 'Yes', 1);
 
--- --------------------------------------------------------
-
---
--- Structure de la table `COLLATION_CHARACTER_SET_APPLICABILITY`
---
 
 CREATE TEMPORARY TABLE `COLLATION_CHARACTER_SET_APPLICABILITY` (
   `COLLATION_NAME` varchar(32) NOT NULL DEFAULT '',
   `CHARACTER_SET_NAME` varchar(32) NOT NULL DEFAULT ''
 ) ENGINE=MEMORY DEFAULT CHARSET=utf8;
-
---
--- Contenu de la table `COLLATION_CHARACTER_SET_APPLICABILITY`
---
 
 INSERT INTO `COLLATION_CHARACTER_SET_APPLICABILITY` (`COLLATION_NAME`, `CHARACTER_SET_NAME`) VALUES
 ('big5_chinese_ci', 'big5'),
@@ -613,11 +517,6 @@ INSERT INTO `COLLATION_CHARACTER_SET_APPLICABILITY` (`COLLATION_NAME`, `CHARACTE
 ('eucjpms_japanese_ci', 'eucjpms'),
 ('eucjpms_bin', 'eucjpms');
 
--- --------------------------------------------------------
-
---
--- Structure de la table `COLUMNS`
---
 
 CREATE TEMPORARY TABLE `COLUMNS` (
   `TABLE_CATALOG` varchar(512) NOT NULL DEFAULT '',
@@ -641,9 +540,6 @@ CREATE TEMPORARY TABLE `COLUMNS` (
   `COLUMN_COMMENT` varchar(1024) NOT NULL DEFAULT ''
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Contenu de la table `COLUMNS`
---
 
 INSERT INTO `COLUMNS` (`TABLE_CATALOG`, `TABLE_SCHEMA`, `TABLE_NAME`, `COLUMN_NAME`, `ORDINAL_POSITION`, `COLUMN_DEFAULT`, `IS_NULLABLE`, `DATA_TYPE`, `CHARACTER_MAXIMUM_LENGTH`, `CHARACTER_OCTET_LENGTH`, `NUMERIC_PRECISION`, `NUMERIC_SCALE`, `CHARACTER_SET_NAME`, `COLLATION_NAME`, `COLUMN_TYPE`, `COLUMN_KEY`, `EXTRA`, `PRIVILEGES`, `COLUMN_COMMENT`) VALUES
 ('def', 'information_schema', 'CHARACTER_SETS', 'CHARACTER_SET_NAME', 1, '', 'NO', 'varchar', 32, 96, NULL, NULL, 'utf8', 'utf8_general_ci', 'varchar(32)', '', '', 'select', ''),
@@ -1148,11 +1044,6 @@ INSERT INTO `COLUMNS` (`TABLE_CATALOG`, `TABLE_SCHEMA`, `TABLE_NAME`, `COLUMN_NA
 ('def', '1101922', 'score', 'nomJoueur', 4, NULL, 'NO', 'varchar', 20, 20, NULL, NULL, 'latin1', 'latin1_swedish_ci', 'varchar(20)', 'MUL', '', 'select,insert,update,references', ''),
 ('def', '1101922', 'score', 'point', 5, NULL, 'NO', 'int', NULL, NULL, 10, 0, NULL, NULL, 'int(11)', '', '', 'select,insert,update,references', '');
 
--- --------------------------------------------------------
-
---
--- Structure de la table `COLUMN_PRIVILEGES`
---
 
 CREATE TEMPORARY TABLE `COLUMN_PRIVILEGES` (
   `GRANTEE` varchar(81) NOT NULL DEFAULT '',
@@ -1164,11 +1055,6 @@ CREATE TEMPORARY TABLE `COLUMN_PRIVILEGES` (
   `IS_GRANTABLE` varchar(3) NOT NULL DEFAULT ''
 ) ENGINE=MEMORY DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- Structure de la table `ENGINES`
---
 
 CREATE TEMPORARY TABLE `ENGINES` (
   `ENGINE` varchar(64) NOT NULL DEFAULT '',
@@ -1179,9 +1065,7 @@ CREATE TEMPORARY TABLE `ENGINES` (
   `SAVEPOINTS` varchar(3) DEFAULT NULL
 ) ENGINE=MEMORY DEFAULT CHARSET=utf8;
 
---
--- Contenu de la table `ENGINES`
---
+
 
 INSERT INTO `ENGINES` (`ENGINE`, `SUPPORT`, `COMMENT`, `TRANSACTIONS`, `XA`, `SAVEPOINTS`) VALUES
 ('InnoDB', 'YES', 'Supports transactions, row-level locking, and foreign keys', 'YES', 'YES', 'YES'),
@@ -1193,12 +1077,6 @@ INSERT INTO `ENGINES` (`ENGINE`, `SUPPORT`, `COMMENT`, `TRANSACTIONS`, `XA`, `SA
 ('ARCHIVE', 'YES', 'Archive storage engine', 'NO', 'NO', 'NO'),
 ('FEDERATED', 'NO', 'Federated MySQL storage engine', NULL, NULL, NULL),
 ('PERFORMANCE_SCHEMA', 'YES', 'Performance Schema', 'NO', 'NO', 'NO');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `EVENTS`
---
 
 CREATE TEMPORARY TABLE `EVENTS` (
   `EVENT_CATALOG` varchar(64) NOT NULL DEFAULT '',
@@ -1227,11 +1105,6 @@ CREATE TEMPORARY TABLE `EVENTS` (
   `DATABASE_COLLATION` varchar(32) NOT NULL DEFAULT ''
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- Structure de la table `FILES`
---
 
 CREATE TEMPORARY TABLE `FILES` (
   `FILE_ID` bigint(4) NOT NULL DEFAULT '0',
@@ -1274,20 +1147,12 @@ CREATE TEMPORARY TABLE `FILES` (
   `EXTRA` varchar(255) DEFAULT NULL
 ) ENGINE=MEMORY DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- Structure de la table `GLOBAL_STATUS`
---
 
 CREATE TEMPORARY TABLE `GLOBAL_STATUS` (
   `VARIABLE_NAME` varchar(64) NOT NULL DEFAULT '',
   `VARIABLE_VALUE` varchar(1024) DEFAULT NULL
 ) ENGINE=MEMORY DEFAULT CHARSET=utf8;
 
---
--- Contenu de la table `GLOBAL_STATUS`
---
 
 INSERT INTO `GLOBAL_STATUS` (`VARIABLE_NAME`, `VARIABLE_VALUE`) VALUES
 ('ABORTED_CLIENTS', '14943'),
@@ -1603,20 +1468,11 @@ INSERT INTO `GLOBAL_STATUS` (`VARIABLE_NAME`, `VARIABLE_VALUE`) VALUES
 ('UPTIME', '51913'),
 ('UPTIME_SINCE_FLUSH_STATUS', '51913');
 
--- --------------------------------------------------------
-
---
--- Structure de la table `GLOBAL_VARIABLES`
---
-
 CREATE TEMPORARY TABLE `GLOBAL_VARIABLES` (
   `VARIABLE_NAME` varchar(64) NOT NULL DEFAULT '',
   `VARIABLE_VALUE` varchar(1024) DEFAULT NULL
 ) ENGINE=MEMORY DEFAULT CHARSET=utf8;
 
---
--- Contenu de la table `GLOBAL_VARIABLES`
---
 
 INSERT INTO `GLOBAL_VARIABLES` (`VARIABLE_NAME`, `VARIABLE_VALUE`) VALUES
 ('MAX_PREPARED_STMT_COUNT', '16382'),
@@ -1937,11 +1793,7 @@ INSERT INTO `GLOBAL_VARIABLES` (`VARIABLE_NAME`, `VARIABLE_VALUE`) VALUES
 ('INNODB_OLD_BLOCKS_PCT', '37'),
 ('HAVE_COMPRESS', 'YES');
 
--- --------------------------------------------------------
 
---
--- Structure de la table `KEY_COLUMN_USAGE`
---
 
 CREATE TEMPORARY TABLE `KEY_COLUMN_USAGE` (
   `CONSTRAINT_CATALOG` varchar(512) NOT NULL DEFAULT '',
@@ -1958,9 +1810,7 @@ CREATE TEMPORARY TABLE `KEY_COLUMN_USAGE` (
   `REFERENCED_COLUMN_NAME` varchar(64) DEFAULT NULL
 ) ENGINE=MEMORY DEFAULT CHARSET=utf8;
 
---
--- Contenu de la table `KEY_COLUMN_USAGE`
---
+
 
 INSERT INTO `KEY_COLUMN_USAGE` (`CONSTRAINT_CATALOG`, `CONSTRAINT_SCHEMA`, `CONSTRAINT_NAME`, `TABLE_CATALOG`, `TABLE_SCHEMA`, `TABLE_NAME`, `COLUMN_NAME`, `ORDINAL_POSITION`, `POSITION_IN_UNIQUE_CONSTRAINT`, `REFERENCED_TABLE_SCHEMA`, `REFERENCED_TABLE_NAME`, `REFERENCED_COLUMN_NAME`) VALUES
 ('def', '1101922', 'PRIMARY', 'def', '1101922', 'categories', 'idCategorie', 1, NULL, NULL, NULL, NULL),
@@ -1969,11 +1819,6 @@ INSERT INTO `KEY_COLUMN_USAGE` (`CONSTRAINT_CATALOG`, `CONSTRAINT_SCHEMA`, `CONS
 ('def', '1101922', 'PRIMARY', 'def', '1101922', 'question', 'idQuestion', 1, NULL, NULL, NULL, NULL),
 ('def', '1101922', 'PRIMARY', 'def', '1101922', 'score', 'idScore', 1, NULL, NULL, NULL, NULL);
 
--- --------------------------------------------------------
-
---
--- Structure de la table `PARAMETERS`
---
 
 CREATE TEMPORARY TABLE `PARAMETERS` (
   `SPECIFIC_CATALOG` varchar(512) NOT NULL DEFAULT '',
@@ -1993,11 +1838,7 @@ CREATE TEMPORARY TABLE `PARAMETERS` (
   `ROUTINE_TYPE` varchar(9) NOT NULL DEFAULT ''
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
 
---
--- Structure de la table `PARTITIONS`
---
 
 CREATE TEMPORARY TABLE `PARTITIONS` (
   `TABLE_CATALOG` varchar(512) NOT NULL DEFAULT '',
@@ -2027,9 +1868,6 @@ CREATE TEMPORARY TABLE `PARTITIONS` (
   `TABLESPACE_NAME` varchar(64) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Contenu de la table `PARTITIONS`
---
 
 INSERT INTO `PARTITIONS` (`TABLE_CATALOG`, `TABLE_SCHEMA`, `TABLE_NAME`, `PARTITION_NAME`, `SUBPARTITION_NAME`, `PARTITION_ORDINAL_POSITION`, `SUBPARTITION_ORDINAL_POSITION`, `PARTITION_METHOD`, `SUBPARTITION_METHOD`, `PARTITION_EXPRESSION`, `SUBPARTITION_EXPRESSION`, `PARTITION_DESCRIPTION`, `TABLE_ROWS`, `AVG_ROW_LENGTH`, `DATA_LENGTH`, `MAX_DATA_LENGTH`, `INDEX_LENGTH`, `DATA_FREE`, `CREATE_TIME`, `UPDATE_TIME`, `CHECK_TIME`, `CHECKSUM`, `PARTITION_COMMENT`, `NODEGROUP`, `TABLESPACE_NAME`) VALUES
 ('def', 'information_schema', 'CHARACTER_SETS', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 384, 0, 65739264, 0, 0, '2016-02-19 12:54:21', NULL, NULL, NULL, '', '', NULL),
@@ -2078,11 +1916,6 @@ INSERT INTO `PARTITIONS` (`TABLE_CATALOG`, `TABLE_SCHEMA`, `TABLE_NAME`, `PARTIT
 ('def', '1101922', 'question', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 48, 97, 4692, 281474976710655, 2048, 0, '2016-02-18 17:55:44', '2016-02-19 12:35:35', NULL, NULL, '', '', NULL),
 ('def', '1101922', 'score', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 7, 39, 276, 281474976710655, 3072, 0, '2016-02-19 12:28:31', '2016-02-19 12:42:56', NULL, NULL, '', '', NULL);
 
--- --------------------------------------------------------
-
---
--- Structure de la table `PLUGINS`
---
 
 CREATE TEMPORARY TABLE `PLUGINS` (
   `PLUGIN_NAME` varchar(64) NOT NULL DEFAULT '',
@@ -2098,9 +1931,6 @@ CREATE TEMPORARY TABLE `PLUGINS` (
   `LOAD_OPTION` varchar(64) NOT NULL DEFAULT ''
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Contenu de la table `PLUGINS`
---
 
 INSERT INTO `PLUGINS` (`PLUGIN_NAME`, `PLUGIN_VERSION`, `PLUGIN_STATUS`, `PLUGIN_TYPE`, `PLUGIN_TYPE_VERSION`, `PLUGIN_LIBRARY`, `PLUGIN_LIBRARY_VERSION`, `PLUGIN_AUTHOR`, `PLUGIN_DESCRIPTION`, `PLUGIN_LICENSE`, `LOAD_OPTION`) VALUES
 ('binlog', '1.0', 'ACTIVE', 'STORAGE ENGINE', '50532.0', NULL, NULL, 'MySQL AB', 'This is a pseudo storage engine to represent the binlog in a transaction', 'GPL', 'FORCE'),
@@ -2129,9 +1959,7 @@ INSERT INTO `PLUGINS` (`PLUGIN_NAME`, `PLUGIN_VERSION`, `PLUGIN_STATUS`, `PLUGIN
 
 -- --------------------------------------------------------
 
---
--- Structure de la table `PROCESSLIST`
---
+
 
 CREATE TEMPORARY TABLE `PROCESSLIST` (
   `ID` bigint(4) NOT NULL DEFAULT '0',
@@ -2144,18 +1972,10 @@ CREATE TEMPORARY TABLE `PROCESSLIST` (
   `INFO` longtext
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Contenu de la table `PROCESSLIST`
---
 
 INSERT INTO `PROCESSLIST` (`ID`, `USER`, `HOST`, `DB`, `COMMAND`, `TIME`, `STATE`, `INFO`) VALUES
 (1562067, '1101922', 'localhost', '1101922', 'Query', 0, 'executing', 'SELECT * FROM `information_schema`.`PROCESSLIST`');
 
--- --------------------------------------------------------
-
---
--- Structure de la table `PROFILING`
---
 
 CREATE TEMPORARY TABLE `PROFILING` (
   `QUERY_ID` int(20) NOT NULL DEFAULT '0',
@@ -2178,11 +1998,6 @@ CREATE TEMPORARY TABLE `PROFILING` (
   `SOURCE_LINE` int(20) DEFAULT NULL
 ) ENGINE=MEMORY DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- Structure de la table `REFERENTIAL_CONSTRAINTS`
---
 
 CREATE TEMPORARY TABLE `REFERENTIAL_CONSTRAINTS` (
   `CONSTRAINT_CATALOG` varchar(512) NOT NULL DEFAULT '',
@@ -2198,11 +2013,6 @@ CREATE TEMPORARY TABLE `REFERENTIAL_CONSTRAINTS` (
   `REFERENCED_TABLE_NAME` varchar(64) NOT NULL DEFAULT ''
 ) ENGINE=MEMORY DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- Structure de la table `ROUTINES`
---
 
 CREATE TEMPORARY TABLE `ROUTINES` (
   `SPECIFIC_NAME` varchar(64) NOT NULL DEFAULT '',
@@ -2237,11 +2047,7 @@ CREATE TEMPORARY TABLE `ROUTINES` (
   `DATABASE_COLLATION` varchar(32) NOT NULL DEFAULT ''
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
 
---
--- Structure de la table `SCHEMATA`
---
 
 CREATE TEMPORARY TABLE `SCHEMATA` (
   `CATALOG_NAME` varchar(512) NOT NULL DEFAULT '',
@@ -2251,19 +2057,12 @@ CREATE TEMPORARY TABLE `SCHEMATA` (
   `SQL_PATH` varchar(512) DEFAULT NULL
 ) ENGINE=MEMORY DEFAULT CHARSET=utf8;
 
---
--- Contenu de la table `SCHEMATA`
---
 
 INSERT INTO `SCHEMATA` (`CATALOG_NAME`, `SCHEMA_NAME`, `DEFAULT_CHARACTER_SET_NAME`, `DEFAULT_COLLATION_NAME`, `SQL_PATH`) VALUES
 ('def', 'information_schema', 'utf8', 'utf8_general_ci', NULL),
 ('def', '1101922', 'utf8', 'utf8_general_ci', NULL);
 
--- --------------------------------------------------------
 
---
--- Structure de la table `SCHEMA_PRIVILEGES`
---
 
 CREATE TEMPORARY TABLE `SCHEMA_PRIVILEGES` (
   `GRANTEE` varchar(81) NOT NULL DEFAULT '',
@@ -2273,9 +2072,6 @@ CREATE TEMPORARY TABLE `SCHEMA_PRIVILEGES` (
   `IS_GRANTABLE` varchar(3) NOT NULL DEFAULT ''
 ) ENGINE=MEMORY DEFAULT CHARSET=utf8;
 
---
--- Contenu de la table `SCHEMA_PRIVILEGES`
---
 
 INSERT INTO `SCHEMA_PRIVILEGES` (`GRANTEE`, `TABLE_CATALOG`, `TABLE_SCHEMA`, `PRIVILEGE_TYPE`, `IS_GRANTABLE`) VALUES
 ('''1101922''@''localhost''', 'def', '1101922', 'SELECT', 'NO'),
@@ -2292,20 +2088,12 @@ INSERT INTO `SCHEMA_PRIVILEGES` (`GRANTEE`, `TABLE_CATALOG`, `TABLE_SCHEMA`, `PR
 ('''1101922''@''localhost''', 'def', '1101922', 'CREATE VIEW', 'NO'),
 ('''1101922''@''localhost''', 'def', '1101922', 'SHOW VIEW', 'NO');
 
--- --------------------------------------------------------
-
---
--- Structure de la table `SESSION_STATUS`
---
 
 CREATE TEMPORARY TABLE `SESSION_STATUS` (
   `VARIABLE_NAME` varchar(64) NOT NULL DEFAULT '',
   `VARIABLE_VALUE` varchar(1024) DEFAULT NULL
 ) ENGINE=MEMORY DEFAULT CHARSET=utf8;
 
---
--- Contenu de la table `SESSION_STATUS`
---
 
 INSERT INTO `SESSION_STATUS` (`VARIABLE_NAME`, `VARIABLE_VALUE`) VALUES
 ('ABORTED_CLIENTS', '14943'),
@@ -2621,20 +2409,13 @@ INSERT INTO `SESSION_STATUS` (`VARIABLE_NAME`, `VARIABLE_VALUE`) VALUES
 ('UPTIME', '51918'),
 ('UPTIME_SINCE_FLUSH_STATUS', '51918');
 
--- --------------------------------------------------------
-
---
--- Structure de la table `SESSION_VARIABLES`
---
 
 CREATE TEMPORARY TABLE `SESSION_VARIABLES` (
   `VARIABLE_NAME` varchar(64) NOT NULL DEFAULT '',
   `VARIABLE_VALUE` varchar(1024) DEFAULT NULL
 ) ENGINE=MEMORY DEFAULT CHARSET=utf8;
 
---
--- Contenu de la table `SESSION_VARIABLES`
---
+
 
 INSERT INTO `SESSION_VARIABLES` (`VARIABLE_NAME`, `VARIABLE_VALUE`) VALUES
 ('MAX_PREPARED_STMT_COUNT', '16382'),
